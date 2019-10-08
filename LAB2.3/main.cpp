@@ -51,7 +51,7 @@ int main(int argc, char *argv[]) {
    // Close input stream.
    inFS.close();
    
-   // Get integer average of all values read in.4
+   // Get integer average of all values read in.
    int average;
    int total = 0;
    
@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
    // Write converted values into ouptut csv file, each integer separated by a comma.
    for (unsigned i = 0; i < intVector.size(); ++i) {
 	   outFS << intVector.at(i);
-	   if (i + 1 < intVector.size()) {
+	   if (i + 1 < intVector.size()) { // if there's more ints to write, put another comma
 		   outFS << ',';
 	   }
    }

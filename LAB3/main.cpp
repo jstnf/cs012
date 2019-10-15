@@ -17,8 +17,8 @@ class Rational {
       const Rational divide(const Rational &) const;
       void simplify();
       void display() const;
-	  int getNumerator() const;
-	  int getDenominator() const;
+      int getNumerator() const;
+      int getDenominator() const;
    private:
       int gcd(int, int) const;
 };
@@ -26,98 +26,98 @@ class Rational {
 // Implement Rational class member functions here
 
 Rational::Rational() {
-	this->numerator = 0;
-	this->denominator = 1;
+    this->numerator = 0;
+    this->denominator = 1;
 }
 
 Rational::Rational(int num) {
-	this->numerator = num;
-	this->denominator = 1;
+    this->numerator = num;
+    this->denominator = 1;
 }
 
 Rational::Rational(int numerator, int denominator) {
-	this->numerator = numerator;
-	this->denominator = denominator;
+    this->numerator = numerator;
+    this->denominator = denominator;
 }
 
 const Rational Rational::add(const Rational &r) const {
-	int num1 = this->numerator; // a
-	int num2 = r.getNumerator(); // c
-	int den1 = this->denominator; // b
-	int den2 = r.getDenominator(); // d
-	
-	int newNum = num1 * den2 + den1 * num2;
-	int newDen = den1 * den2;
-	
-	return Rational(newNum, newDen);
+    int num1 = this->numerator; // a
+    int num2 = r.getNumerator(); // c
+    int den1 = this->denominator; // b
+    int den2 = r.getDenominator(); // d
+    
+    int newNum = num1 * den2 + den1 * num2;
+    int newDen = den1 * den2;
+    
+    return Rational(newNum, newDen);
 }
 
 const Rational Rational::subtract(const Rational &r) const {
-	int num1 = this->numerator; // a
-	int num2 = r.getNumerator(); // c
-	int den1 = this->denominator; // b
-	int den2 = r.getDenominator(); // d
-	
-	int newNum = num1 * den2 - den1 * num2;
-	int newDen = den1 * den2;
-	
-	return Rational(newNum, newDen);
+    int num1 = this->numerator; // a
+    int num2 = r.getNumerator(); // c
+    int den1 = this->denominator; // b
+    int den2 = r.getDenominator(); // d
+    
+    int newNum = num1 * den2 - den1 * num2;
+    int newDen = den1 * den2;
+    
+    return Rational(newNum, newDen);
 }
 
 const Rational Rational::multiply(const Rational &r) const {
-	int num1 = this->numerator; // a
-	int num2 = r.getNumerator(); // c
-	int den1 = this->denominator; // b
-	int den2 = r.getDenominator(); // d
-	
-	int newNum = num1 * num2;
-	int newDen = den1 * den2;
-	
-	return Rational(newNum, newDen);
+    int num1 = this->numerator; // a
+    int num2 = r.getNumerator(); // c
+    int den1 = this->denominator; // b
+    int den2 = r.getDenominator(); // d
+    
+    int newNum = num1 * num2;
+    int newDen = den1 * den2;
+    
+    return Rational(newNum, newDen);
 }
 
 const Rational Rational::divide(const Rational &r) const {
-	int num1 = this->numerator; // a
-	int num2 = r.getNumerator(); // c
-	int den1 = this->denominator; // b
-	int den2 = r.getDenominator(); // d
-	
-	int newNum = num1 * den2;
-	int newDen = den1 * num2;
-	
-	return Rational(newNum, newDen);
+    int num1 = this->numerator; // a
+    int num2 = r.getNumerator(); // c
+    int den1 = this->denominator; // b
+    int den2 = r.getDenominator(); // d
+    
+    int newNum = num1 * den2;
+    int newDen = den1 * num2;
+    
+    return Rational(newNum, newDen);
 }
 
 void Rational::simplify() {
-	int gcd = this->gcd(this->numerator, this->denominator);
-	this->numerator = this->numerator / gcd;
-	this->denominator = this->denominator / gcd;
+    int gcd = this->gcd(this->numerator, this->denominator);
+    this->numerator = this->numerator / gcd;
+    this->denominator = this->denominator / gcd;
 }
 
 void Rational::display() const {
-	cout << this->numerator << " / " << this->denominator;
+    cout << this->numerator << " / " << this->denominator;
 }
 
 int Rational::getNumerator() const {
-	return this-> numerator;
+    return this-> numerator;
 }
 
 int Rational::getDenominator() const {
-	return this->denominator;
+    return this->denominator;
 }
 
 int Rational::gcd(int num1, int num2) const {
-	int n1 = num1;
-	int n2 = num2;
-	while (n1 != n2) {
-		if (n1 > n2) {
-			n1 = n1 - n2;
-		}
-		else {
-			n2 = n2 - n1;
-		}
-	}
-	return n1;
+    int n1 = num1;
+    int n2 = num2;
+    while (n1 != n2) {
+        if (n1 > n2) {
+            n1 = n1 - n2;
+        }
+        else {
+            n2 = n2 - n1;
+        }
+    }
+    return n1;
 }
 
 // Do not change any of the code below this line!!
